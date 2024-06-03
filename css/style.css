@@ -14,9 +14,24 @@
     padding: 5px;
     border: 1px solid black;
     border-radius: 5px;
-    width: 15%;
+    width: 20%;
     margin-top: 30px;
 }
+
+.contaUsuario {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 20%;
+    margin-top: 30px;
+}
+
+.contaUsuario > a{
+    text-decoration: none;
+    color: black;
+}
+
 
 .listUsuario:hover {
     background-color: rgba(0, 0, 0, 0.48);
@@ -39,7 +54,7 @@
     padding: 5px;
     border: 1px solid black;
     border-radius: 5px;
-    width: 15%;
+    width: 20%;
     margin-top: 30px;
 }
 
@@ -66,6 +81,6 @@
 }
 
 .bodyPerfil {
-    background: rgba(0, 0, 0, 0.56);
+    background: rgba(0, 0, 0, 0.34);
     font-family: Georgia;
 }

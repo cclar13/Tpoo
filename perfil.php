@@ -35,12 +35,13 @@ if (!isset($_SESSION['email'])) {
 </nav>
 
 <div class="container">
-    <h1 class="text-center mt-3 p-3">Bem-vindo ao Sistema de Usuarios</h1>
+    <h1 class="text-center mt-3 p-3">Bem-vindo ao Sistema de Biblioteca</h1>
 
     <h2>Opções:</h2>
     <div class="escolhas">
-        <h4 class="listUsuario"><a href="listarUsuario.php">Listar Itens</a></h4>
-        <h4 class="addUsuario"><a href="addUsuario.php">Adicionar Item</a></h4>
+        <h4 class="listUsuario"><a href="listarUsuario.php">Listar Usuarios</a></h4>
+        <h4 class="addUsuario"><a href="addUsuario.php">Adicionar Usuarios</a></h4>
+        <h4 class="contaUsuario"><a href="conta.php">Abrir Conta</a></h4>
     </div>
 </div>
 

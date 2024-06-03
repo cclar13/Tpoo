@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cardLogin {
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.listUsuario {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 15%;
+    margin-top: 30px;
+}
+
+.listUsuario:hover {
+    background-color: rgba(0, 0, 0, 0.48);
+    color: white;
+    animation: 2s   ;
+}
+
+
+.listUsuario > a {
+    text-decoration: none;
+    color: black;
+}
+.listUsuario > a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.addUsuario {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 15%;
+    margin-top: 30px;
+}
+
+.addUsuario:hover {
+    background-color: rgba(0, 0, 0, 0.56);
+    color: white;
+    animation: 2s   ;
+}
+
+
+.addUsuario > a {
+    text-decoration: none;
+    color: black;
+}
+
+.addUsuario > a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.escolhas {
+    display: flex;
+    justify-content: center;
+}
+
+.bodyPerfil {
+    background: rgba(0, 0, 0, 0.56);
+    font-family: Georgia;
+}

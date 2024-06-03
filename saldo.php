@@ -42,15 +42,15 @@ $saldoConta = $conta->verSaldo();
     <table class="table table-bordered table-hover border-dark">
         <thead class="table-dark">
         <tr>
-            <th style="width: 10%;">ID</th>
-            <th style="width: 80%;">Saldo</th>
+            <th style="width: 50%;">Titular</th>
+            <th style="width: 50%;">Saldo</th>
         </tr>
         </thead>
         <tbody>
         <?php if (!empty($saldoConta)): ?>
             <?php foreach ($saldoConta as $conta): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($conta['idconta']); ?></td>
+                    <td><?php echo htmlspecialchars($conta['titular']); ?></td>
                     <td><?php echo htmlspecialchars($conta['saldo']); ?></td>
                 </tr>
             <?php endforeach; ?>

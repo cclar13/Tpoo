@@ -70,7 +70,7 @@
                 <div class="card-body">
                     <h5 class="card-title">DEPOSITAR</h5>
                     <p class="card-text">Depositar seu dinheiro</p>
-                    <a href="#" class="btn btn-primary">Depositar</a>
+                    <a href="depositar.php" class="btn btn-primary">Depositar</a>
                 </div>
             </div>
         </div>

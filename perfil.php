@@ -35,13 +35,51 @@ if (!isset($_SESSION['email'])) {
 </nav>
 
 <div class="container">
-    <h1 class="text-center mt-3 p-3">Bem-vindo ao Sistema de Biblioteca</h1>
 
-    <h2>Opções:</h2>
+    <div class="banner mt-5">
+        <img src="./img/banner.png" alt="" width="100%">
+    </div>
+    
+    <h2 class="mt-2">Opções:</h2>
     <div class="escolhas">
-        <h4 class="listUsuario"><a href="listarUsuario.php">Listar Usuarios</a></h4>
-        <h4 class="addUsuario"><a href="addUsuario.php">Adicionar Usuarios</a></h4>
-        <h4 class="contaUsuario"><a href="conta.php">Abrir Conta</a></h4>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card morromClaro" >
+                    <img src="./img/usuario.png" class="imgConta" alt="..."     >
+                    <div class="card-body border-top">
+                        <h5 class="card-title">Listar Usuario</h5>
+                        <p class="card-text">Listagem dos Usuarios cadastrados</p>
+                        <a href="listarUsuario.php" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class=" morromClaro">
+                    <img src="./img/addUsuario.png" class="imgConta" alt="...">
+                    <div class="card-body border-top">
+                        <h5 class="card-title">Adicionar Usuario</h5>
+                        <p class="card-text">Adcione  um novo   usuario</p>
+                        <a href="addUsuario.php"class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card morromClaro">
+                    <img src="./img/entrarConta.png" class="imgConta" alt="..." >
+                    <div class="card-body border-top">
+                        <h5 class="card-title">Entrar na Conta</h5>
+                        <p class="card-text">Não tem conta?<a href="">Crie uma</a></p>
+                        <a href="conta.php" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!---->
+<!--        <h4 class="listUsuario"><a href="listarUsuario.php">Listar Usuarios</a></h4>-->
+<!--        <h4 class="addUsuario"><a href="addUsuario.php">Adicionar Usuarios</a></h4>-->
+<!--        <h4 class="contaUsuario"><a href="conta.php">Entra Conta</a></h4>-->
     </div>
 </div>
 

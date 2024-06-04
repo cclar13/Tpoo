@@ -4,7 +4,7 @@ include('adm.php');
 
 session_start();
 
-$response = []; // Inicializa um array vazio para a resposta JSON
+$response = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = new Conexao();

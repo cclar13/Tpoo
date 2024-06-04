@@ -1,11 +1,36 @@
 <?php
 class Adm {
     private $conn;
+    private $email;
+    private $senha;
 
     public function __construct($conn) {
         $this->conn = $conn;
     }
 
+//    GET E SET EXEMPLOS
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email){
+        $this->email = $email;
+    }
+
+
+    public function getSenha()
+    {
+        return $this->senha;
+    }
+
+    public function setSenha($s)
+    {
+        $this->senha = $s;
+    }
+
+
+//    METEDO(FUNCAO) DE VERIFICAR SENHA
     public function autenticar($campos, $tabela, $campoBdString, $campoBdString2, $campoParametro, $campoParametro2, $campoBdAtivo, $valorAtivo) {
         try {
             $sqlLista = $this->conn->prepare("SELECT $campos "
@@ -27,6 +52,8 @@ class Adm {
         }
     }
 
+//    METODO DE INSERT USUARIO
+
     public function adicionarUsuario($email, $senha) {
         try {
             $sql = "INSERT INTO adm(emailAdm, senhaAdm) VALUES  (?, ?)";
@@ -39,17 +66,23 @@ class Adm {
         }
     }
 
+
+//    METODO DE LISTAR USUARIOS
+
     public function listarUsuarios() {
         try {
             $sql = "SELECT idadm, emailAdm FROM adm";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC); // Retorna os resultados como um array associativo
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo 'Exception -> ' . $e->getMessage();
             return [];
         }
     }
+
+
+//    TENTATIVO DE DELETE
 
     public function deletarUsuario($id) {
         $sql = "DELETE FROM adm WHERE id=?";

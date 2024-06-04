@@ -1,19 +1,19 @@
 <?php
 include('conexao.php');
-include('contaNormal.php');
+include('contaCorrente.php');
 
 $conn = new Conexao();
-$contaN = new Conta($conn->getConn());
+$contaC = new ContaCorrente($conn->getConn());
 
 $message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titularCadastro = $_POST['titularCadastro'];
     try {
-        $contaN->addTitular($titularCadastro);
-        $message = 'Usuário cadastrado com sucesso!';
+        $contaC->addTitular($titularCadastro);
+        $message = 'Titular Cadastrado com sucesso!';
     } catch (Exception $e) {
-        $message = 'Erro ao cadastrar usuário: ' . $e->getMessage();
+        $message = 'Erro ao cadastrar o titular: ' . $e->getMessage();
     }
 }
 ?>
@@ -50,22 +50,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </nav>
-
+<?php if ($message != ''): ?>
+    <script>
+        alert('<?php echo $message; ?>');
+    </script>
+<?php endif; ?>
 <div class="container">
     <div class="row justify-content-md-center mt-5  ">
         <div class="col-md-4">
-            <div class="card">
-                <h5 class="card-header">CADASTRO </h5>
+            <div class="card mt-5">
+                <h5 class="card-header bg-dark text-white">CADASTRO </h5>
                 <div class="card">
                     <div class="card-body">
                         <form action="" method="POST">
                             <fieldset>
-                                <legend>Crie sua conta</legend>
+                                <legend><h4>Crie sua conta</h4></legend>
                                 <div class="mb-3">
                                     <label for="titularCadastro" class="form-label">Titular</label>
                                     <input type="text" id="titularCadastro" name="titularCadastro" class="form-control" placeholder=" Titular">
                                 </div>
-                                <button type="submit" class="btn btn-primary" value="Cadastrar">CRIAR</button>
+                                <button type="submit" class="btn btn-dark w-100" value="Cadastrar">CRIAR</button>
                             </fieldset>
                         </form>
                     </div>
@@ -78,5 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
 </body>
 </html>

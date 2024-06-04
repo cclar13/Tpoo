@@ -12,7 +12,7 @@ if (!isset($_SESSION['email'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>DASHBOARD</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['email'])) {
                     <div class="card-body border-top">
                         <h5 class="card-title">Adicionar Usuario</h5>
                         <p class="card-text">Adcione  um novo usuario</p>
-                        <a href="addUsuario.php" class="btn btn-dark w-100">ENTRAR</a>
+                        <a href="addUsuario.php" class="btn btn-dark w-100 mt-4">ENTRAR</a>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@ if (!isset($_SESSION['email'])) {
                     <img src="./img/entrarConta.png" class="imgConta" alt="..." >
                     <div class="card-body border-top">
                         <h5 class="card-title">Entrar na Conta</h5>
-                        <p class="card-text">Não tem conta?<a href="criarConta.php">Crie uma</a></p>
+                        <p class="card-text">Não tem conta?<a href="criarConta.php" style="text-decoration: none;color:white">Crie uma</a></p>
                         <a href="conta.php" class="btn btn-dark w-100">ENTRAR</a>
                     </div>
                 </div>

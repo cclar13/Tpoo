@@ -20,18 +20,9 @@ abstract class Conta
         return $this->saldo;
     }
 
-//    public function setTitular()
-//    {
-//        $this->titular;
-//    }
-//
-//    public function setSaldo()
-//    {
-//        $this->saldo;
-//    }
-    abstract function depositarDinheiro($valor,$titular);
-    abstract function verTitular();
-    abstract function addTitular($titular);
+    abstract public function depositarDinheiro($valor,$titular);
+    abstract public function verTitular();
+    abstract public function addTitular($titular);
 
 
 }

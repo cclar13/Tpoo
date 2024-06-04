@@ -69,17 +69,17 @@ function mostrarProcessando() {
     divFundoEscuro.style.left = "0";
     divFundoEscuro.style.width = "100%";
     divFundoEscuro.style.height = "100%";
-    divFundoEscuro.style.backgroundColor = "rgba(123, 0, 255, 0.577)";
+    divFundoEscuro.style.backgroundColor = "rgba(0, 0, 0, 0.577)";
     document.body.appendChild(divFundoEscuro);
 
     var divProcessando = document.createElement("div");
     divProcessando.id = "processandoDiv";
     divProcessando.style.position = "fixed";
     divProcessando.style.top = "45%";
-    divProcessando.style.left = "52%";
+    divProcessando.style.left = "60%";
     divProcessando.style.transform = "translate(-50%, -50%)";
     divProcessando.innerHTML =
-        '<img src="img/loading2.gif" width="80%" alt="Processando..." title="Processando...">';
+        '<img src="img/loading.gif" width="30%" alt="Processando..." title="Processando...">';
     document.body.appendChild(divProcessando);
 }
 // FUNCAO DE ESCONDER O LOADING

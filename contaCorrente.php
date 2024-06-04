@@ -10,24 +10,15 @@ class ContaCorrente extends Conta
         $this->conn = $conn;
     }
 
-    public function depositarDinheiro($valor, $titular)
+    public function depositarDinheiro($valor,$titular )
     {
         try {
-            $sql_select = "SELECT * FROM conta WHERE titular = ?";
-            $sqlInsert_select = $this->conn->prepare($sql_select);
-            $sqlInsert_select->bindParam(1, $titular);
-            $sqlInsert_select->execute();
+            $sql_update = "UPDATE conta SET saldo = saldo + ? WHERE titular = ?";
+            $sqlInsert_update = $this->conn->prepare($sql_update);
+            $sqlInsert_update->bindValue(1, $valor, PDO::PARAM_INT);
+            $sqlInsert_update->bindValue(2, $titular, PDO::PARAM_STR);
+            $sqlInsert_update->execute();
 
-            if ($sqlInsert_select->rowCount() > 0) {
-                $sql_update = "UPDATE conta SET saldo = saldo + ? WHERE titular = ?";
-                $sqlInsert_update = $this->conn->prepare($sql_update);
-                $sqlInsert_update->bindParam(1, $valor);
-                $sqlInsert_update->bindParam(2, $titular);
-                $sqlInsert_update->execute();
-                return true;
-            } else {
-                return false;
-            }
         } catch (PDOException $e) {
             return false;
         }
@@ -35,7 +26,6 @@ class ContaCorrente extends Conta
 
     function verTitular()
     {
-
         try {
             $sqlSelect = "SELECT titular FROM conta";
             $slqPesquisa = $this->conn->prepare($sqlSelect);
@@ -49,9 +39,10 @@ class ContaCorrente extends Conta
     public function addTitular($titular)
     {
         try {
-            $sql = "INSERT INTO conta(titular) VALUES  (?)";
-            $sqlInsert = $this->conn->prepare($sql);
-            $sqlInsert->execute();
+            $sqlInsert = "INSERT INTO conta(titular) VALUES  (?)";
+            $sqlI = $this->conn->prepare($sqlInsert);
+            $sqlI->bindValue(1, $titular, PDO::PARAM_STR);
+            $sqlI->execute();
             return true;
         } catch (PDOException $e) {
             echo 'Exception -> ' . $e->getMessage();

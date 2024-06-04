@@ -26,7 +26,7 @@
             </ul>
             <form class="d-flex" role="search">
                 <button class="btn btn-primary" type="button">
-                    <a href="conta  .php" style="text-decoration: none;color: white">Voltar</a>
+                    <a href="perfil.php" style="text-decoration: none;color: white">Voltar</a>
                 </button>
             </form>
         </div>

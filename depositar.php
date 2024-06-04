@@ -10,22 +10,26 @@ $titular = $contaCorrente->verTitular();
 $message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verifica se os dados do formulário estão definidos
     if (isset($_POST['depositarDinheiro']) && isset($_POST['titularDinheiro'])) {
         $depositarDinheiro = $_POST['depositarDinheiro'];
         $titularDinheiro = $_POST['titularDinheiro'];
 
-        try {
-            $contaCorrente->depositarDinheiro($depositarDinheiro, $titularDinheiro);
-            $message = 'Valor Depositado com sucesso!';
-        } catch (Exception $e) {
-            $message = 'Não Depositado com sucesso: ' . $e->getMessage();
+        if (!empty($depositarDinheiro) && !empty($titularDinheiro)) {
+            try {
+                $contaCorrente->depositarDinheiro($depositarDinheiro, $titularDinheiro);
+                $message = 'Valor Depositado com sucesso!';
+            } catch (Exception $e) {
+                $message = 'Não Depositado com sucesso: ' . $e->getMessage();
+            }
+        } else {
+            $message = 'Por favor, preencha todos os campos do formulário.';
         }
     } else {
         $message = 'Por favor, preencha todos os campos do formulário.';
     }
 }
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -58,6 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </nav>
+<?php if ($message != '') { ?>
+    <script>
+        alert('<?php echo $message; ?>');
+    </script>
+<?php } ?>
 <div class="container" style="margin-top: 10%">
     <div class="row justify-content-md-center">
         <div class="col-md-6">
@@ -74,22 +83,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
 
                             <div class="mb-3">
-<!--                                <select class="form-select" aria-label="Default select example" id="titularDinheiro" name="titularDinheiro">-->
-<!--                                    <option selected>Selecione o titular</option>-->
-<!--                                    --><?php
-//                                    if ($titular) {
-//                                        foreach ($titular as $itemTi) {
-//                                            $idconta = $itemTi->idconta;
-//                                            $titular = $itemTi->titular;
-//                                            ?>
-<!--                                            <option value="--><?php //echo $idconta?><!--" >--><?php //echo $titular ?><!--</option>-->
-<!--                                            --><?php
-//                                        }
-//                                    }
-//                                    ?>
-<!--                                </select>-->
-                                                                <label for="titularDinheiro" class="form-label">Titular</label>
-                                                                <input type="text" id="titularDinheiro" name="titularDinheiro" class="form-control" placeholder="Titular">
+                                <label for="titularDinheiro" class="form-label">Titular</label>
+                                <input type="text" id="titularDinheiro" name="titularDinheiro" class="form-control"
+                                       placeholder="Titular">
                             </div>
                             <button type="submit" class="btn btn-primary w-100">OK</button>
                         </fieldset>

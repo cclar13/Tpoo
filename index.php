@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>ACESSO RESTRITO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -28,10 +28,8 @@
                         </div>
 
                         <div class="alert alert-warning" role="alert" id="alertMsg" style="display:none">
-
                         </div>
-
-                        <button type="button" class="btn btn-outline-success w-100" onclick="fazerLogin()">Acessar</button>
+                        <button type="button" class="btn btn-success w-100" onclick="fazerLogin()">Acessar</button>
                     </form>
 
                 </div>

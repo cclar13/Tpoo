@@ -21,32 +21,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    <a class="nav-link active" aria-current="page" href="perfil.php">Home</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-primary" type="button">
+                    <a href="conta  .php" style="text-decoration: none;color: white">Voltar</a>
+                </button>
             </form>
         </div>
     </div>
@@ -60,7 +41,7 @@
                 <div class="card-body">
                     <h5 class="card-title">SALDO</h5>
                     <p class="card-text">Veja seu saldo</p>
-                    <a href="saldo.php" class="btn btn-primary">Saldo</a>
+                    <a href="saldo.php" class="btn btn-dark w-100">Saldo</a>
                 </div>
             </div>
         </div>
@@ -70,20 +51,11 @@
                 <div class="card-body">
                     <h5 class="card-title">DEPOSITAR</h5>
                     <p class="card-text">Depositar seu dinheiro</p>
-                    <a href="depositar.php" class="btn btn-primary">Depositar</a>
+                    <a href="depositar.php" class="btn btn-dark w-100">Depositar</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card cardSacar">
-                <img src="./img/sacar.jpg" class=" img-fluid" width="50%"  alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">SACAR</h5>
-                    <p class="card-text">Saque seu dinheiro</p>
-                    <a href="#" class="btn btn-primary">Sacar</a>
-                </div>
-            </div>
-        </div>
+
     </div>
 
 </div>

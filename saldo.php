@@ -13,7 +13,7 @@ $saldoConta = $conta->verSaldo();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Usuários Cadastrados</title>
+    <title>Saldo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body style="background: rgba(0,0,0,0.22)">
@@ -31,15 +31,16 @@ $saldoConta = $conta->verSaldo();
             </ul>
             <form class="d-flex" role="search">
                 <button class="btn btn-primary" type="button">
-                    <a href="perfil.php" style="text-decoration: none;color: white">Voltar</a>
+                    <a href="conta.php" style="text-decoration: none;color: white">Voltar</a>
                 </button>
             </form>
         </div>
     </div>
 </nav>
-<h2>Usuários Cadastrados</h2>
+
 <div class="container">
-    <table class="table table-bordered table-hover border-dark">
+    <h2 class="mt-3">Saldo</h2>
+    <table class="table table-bordered table-hover border-dark mt-3">
         <thead class="table-dark">
         <tr>
             <th style="width: 50%;">Titular</th>
@@ -47,16 +48,31 @@ $saldoConta = $conta->verSaldo();
         </tr>
         </thead>
         <tbody>
-        <?php if (!empty($saldoConta)): ?>
-            <?php foreach ($saldoConta as $conta): ?>
+        <tbody>
+        <?php
+
+        if ($saldoConta) {
+
+            foreach ($saldoConta as $imteConta) {
+                $idconta = $imteConta->idconta;
+                $titular = $imteConta->titular;
+                $saldo = $imteConta->saldo;
+                ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($conta['titular']); ?></td>
-                    <td><?php echo htmlspecialchars($conta['saldo']); ?></td>
+                    <th scope="row"><?php echo $titular ?></th>
+                    <td><?php echo $saldo ?></td>
                 </tr>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <tr><td colspan='2'>Sem saldo</td></tr>
-        <?php endif; ?>
+                <?php
+            }
+        } else {
+            ?>
+            <tr>
+                <td colspan="7" class="text-center"><h5>Nenhum cliente cadastrado no banco</h5></td>
+            </tr>
+            <?php
+        }
+        ?>
+        </tbody>
         </tbody>
     </table>
 </div>

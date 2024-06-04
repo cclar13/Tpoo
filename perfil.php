@@ -50,7 +50,7 @@ if (!isset($_SESSION['email'])) {
                     <div class="card-body border-top">
                         <h5 class="card-title">Listar Usuario</h5>
                         <p class="card-text">Listagem dos Usuarios cadastrados</p>
-                        <a href="listarUsuario.php" class="btn btn-primary">Go somewhere</a>
+                        <a href="listarUsuario.php" class="btn btn-dark w-100">ENTRAR</a>
                     </div>
                 </div>
             </div>
@@ -59,8 +59,8 @@ if (!isset($_SESSION['email'])) {
                     <img src="./img/addUsuario.png" class="imgConta" alt="...">
                     <div class="card-body border-top">
                         <h5 class="card-title">Adicionar Usuario</h5>
-                        <p class="card-text">Adcione  um novo   usuario</p>
-                        <a href="addUsuario.php"class="btn btn-primary">Go somewhere</a>
+                        <p class="card-text">Adcione  um novo usuario</p>
+                        <a href="addUsuario.php" class="btn btn-dark w-100">ENTRAR</a>
                     </div>
                 </div>
             </div>
@@ -69,8 +69,8 @@ if (!isset($_SESSION['email'])) {
                     <img src="./img/entrarConta.png" class="imgConta" alt="..." >
                     <div class="card-body border-top">
                         <h5 class="card-title">Entrar na Conta</h5>
-                        <p class="card-text">Não tem conta?<a href="">Crie uma</a></p>
-                        <a href="conta.php" class="btn btn-primary">Go somewhere</a>
+                        <p class="card-text">Não tem conta?<a href="criarConta.php">Crie uma</a></p>
+                        <a href="conta.php" class="btn btn-dark w-100">ENTRAR</a>
                     </div>
                 </div>
             </div>

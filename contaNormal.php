@@ -8,9 +8,7 @@ class Conta {
         $this->conn = $conn;
     }
 
-    function depositar($valor) {
-        $this->saldo += $valor;
-    }
+
 
     function sacar($valor) {
         if (($this->saldo > 0) && ($this->saldo >= $valor)) {
@@ -20,15 +18,53 @@ class Conta {
         }
     }
 
+//    SELECT
     function verSaldo() {
+
         try {
-            $sql = "SELECT idconta, saldo FROM conta";
-            $stmt = $this->conn->prepare($sql);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC); // Retorna os resultados como um array associativo
+            $sqlSelect = "SELECT * FROM conta";
+            $slqPesquisa = $this->conn->prepare($sqlSelect);
+            $slqPesquisa->execute();
+            return $slqPesquisa->fetchAll(PDO::FETCH_OBJ);
         } catch (PDOException $e) {
             echo 'Exception -> ' . $e->getMessage();
-            return [];
+
+        }
+    }
+
+    function listarSaldo($campos,$tabela,$campoOrdem)
+    {
+        $conn = conectar();
+        try {
+            $conn->beginTransaction();
+            $sqlLista = $conn->prepare("SELECT $campos FROM $tabela ORDER BY $campoOrdem ");
+            //        $sqlLista->bindValue(1, $campoParametro, PDO::PARAM_INT);
+            $sqlLista->execute();
+            $conn->commit();
+            if ($sqlLista->rowCount() > 0) {
+                return $sqlLista->fetchAll(PDO::FETCH_OBJ);
+            } else {
+                return null;
+            };
+        } catch (PDOException $e) {
+            echo 'Exception -> ';
+            return ($e->getMessage());
+            $conn->rollback();
+        };
+        $conn = null;
+    }
+
+
+    public function addTitular($titular)
+    {
+        try {
+            $sql = "INSERT INTO conta(titular) VALUES  (?)";
+            $sqlInsert = $this->conn->prepare($sql);
+            $sqlInsert->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo 'Exception -> ' . $e->getMessage();
+            throw $e;
         }
     }
 }

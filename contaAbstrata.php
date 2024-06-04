@@ -30,6 +30,9 @@ abstract class Conta
 //        $this->saldo;
 //    }
     abstract function depositarDinheiro($valor,$titular);
+    abstract function verTitular();
+    abstract function addTitular($titular);
+
 
 }
 

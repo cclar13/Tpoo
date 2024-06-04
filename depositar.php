@@ -5,13 +5,15 @@ include('contaCorrente.php');
 $conn = new Conexao();
 $contaCorrente = new ContaCorrente($conn->getConn());
 
+$titular = $contaCorrente->verTitular();
+
 $message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se os dados do formulário estão definidos
     if (isset($_POST['depositarDinheiro']) && isset($_POST['titularDinheiro'])) {
         $depositarDinheiro = $_POST['depositarDinheiro'];
-        $titularDinheiro= $_POST['titularDinheiro'];
+        $titularDinheiro = $_POST['titularDinheiro'];
 
         try {
             $contaCorrente->depositarDinheiro($depositarDinheiro, $titularDinheiro);
@@ -50,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </ul>
             <form class="d-flex" role="search">
                 <button class="btn btn-primary" type="button">
-                    <a href="perfil.php" style="text-decoration: none;color: white">Voltar</a>
+                    <a href="conta.php" style="text-decoration: none;color: white">Voltar</a>
                 </button>
             </form>
         </div>
@@ -67,12 +69,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <fieldset>
                             <div class="mb-3">
                                 <label for="depositarDinheiro" class="form-label">Deposite o valor</label>
-                                <input type="text" id="depositarDinheiro" name="depositarDinheiro" class="form-control" placeholder="Dinheiro">
+                                <input type="text" id="depositarDinheiro" name="depositarDinheiro" class="form-control"
+                                       placeholder="Dinheiro">
                             </div>
 
                             <div class="mb-3">
-                                <label for="titularDinheiro" class="form-label">Titular</label>
-                                <input type="text" id="titularDinheiro" name="titularDinheiro" class="form-control" placeholder="Titular">
+<!--                                <select class="form-select" aria-label="Default select example" id="titularDinheiro" name="titularDinheiro">-->
+<!--                                    <option selected>Selecione o titular</option>-->
+<!--                                    --><?php
+//                                    if ($titular) {
+//                                        foreach ($titular as $itemTi) {
+//                                            $idconta = $itemTi->idconta;
+//                                            $titular = $itemTi->titular;
+//                                            ?>
+<!--                                            <option value="--><?php //echo $idconta?><!--" >--><?php //echo $titular ?><!--</option>-->
+<!--                                            --><?php
+//                                        }
+//                                    }
+//                                    ?>
+<!--                                </select>-->
+                                                                <label for="titularDinheiro" class="form-label">Titular</label>
+                                                                <input type="text" id="titularDinheiro" name="titularDinheiro" class="form-control" placeholder="Titular">
                             </div>
                             <button type="submit" class="btn btn-primary w-100">OK</button>
                         </fieldset>
